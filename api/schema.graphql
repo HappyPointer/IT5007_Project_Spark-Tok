@@ -1,0 +1,35 @@
+type User {
+  _id: ID!
+  email: String!
+  pwd: String
+  total_likes: Int!
+  like_labels: [String!]!
+  like_numbers: [Int!]!
+}
+
+type Paper {
+  _id: ID!
+  title: String!
+  authors: String!
+  abstract: String!
+  labels: [String]!
+}
+
+type Recommendation {
+  paper: Paper!
+  hasComment: Boolean!
+  comment: String
+}
+
+##### Top level declarations
+
+type Query {
+  recommendPaper(userEmail: String!, lastPaperID: String): Recommendation!
+  randomPaper(lastPaperID: String): Recommendation!
+  checkLogin(userEmail: String!, userPWD: String!): Boolean!
+}
+
+type Mutation {
+  addUser(u_email: String!, u_password: String!): String
+  likePaper(u_email: String!, labels: [String!]): User
+}
