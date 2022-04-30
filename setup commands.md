@@ -32,17 +32,17 @@ npm insatll
 
 npm run compile
 
-npm start
+screen npm start
 
 
 ### API server setup
 ### Go to the api directory and execute the following commands:
 npm install
 
-screen mongod
+sudo screen mongod
 
 node scripts/init.mongo.js
 
-npm start
+screen npm start
 
 ### Note: If you are deploying the project on a cloud server with public IP, do remember to change the "API_address" variable to your public IP address, which is defined in ./ui/src/graphQLFetch.js line 13
