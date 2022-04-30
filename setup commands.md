@@ -39,8 +39,8 @@ npm start
 ### Go to the api directory and execute the following commands:
 npm install
 
-node scripts/init.mongo.js
-
 screen mongod
+
+node scripts/init.mongo.js
 
 npm start
