@@ -44,3 +44,5 @@ screen mongod
 node scripts/init.mongo.js
 
 npm start
+
+### Note: If you are deploying the project on a cloud server with public IP, do remember to change the "API_address" variable to your public IP address, which is defined in ./ui/src/graphQLFetch.js line 13
