@@ -141,13 +141,15 @@ export default class MainPage extends React.Component {
     } // the return value is boolean
   }
 
-
   // like button pressed handler function
-  handle_like_click(e) {
+  async handle_like_click(e) {
     e.preventDefault();
     
-    if (this.state.isToggleOn == true){
-      this.likeCurrentPaper();
+    if (this.state.userEmail == null) {
+      alert("To share us with your interest, you need to log in first (*^_^*)");
+    }
+    else if (this.state.isToggleOn == true){
+      await this.likeCurrentPaper();
       this.setState({isToggleOn: false});
       alert('You like this paper!');
     }
